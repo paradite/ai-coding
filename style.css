@@ -33,18 +33,48 @@ h1 {
   text-transform: uppercase;
 }
 
+/* Legend and credits visibility - default state */
+.legend-mobile,
+.credits-mobile,
+.disclaimer-mobile {
+  display: none;
+}
+
+.legend-desktop,
+.credits-desktop,
+.disclaimer-desktop {
+  display: block;
+}
+
 /* small screen */
 @media (max-width: 768px) {
   h1 {
     margin-left: 0;
     font-size: 0.8rem;
   }
+
+  svg {
+    width: 95vw;
+    max-width: 800px;
+  }
+
+  .legend-desktop,
+  .credits-desktop,
+  .disclaimer-desktop {
+    display: none;
+  }
+
+  .legend-mobile,
+  .credits-mobile,
+  .disclaimer-mobile {
+    display: block;
+  }
 }
 
 /* cap the width of the visualization */
 svg {
   width: 90vw;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 svg text {

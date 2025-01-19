@@ -145,8 +145,8 @@ export function generateData() {
       name: 'v0',
       level: 'L3',
       domain: 'frontend',
-      x: 0.2,
-      y: 2.3,
+      x: 1.2,
+      y: 2.8,
       status: 'available',
     },
     {

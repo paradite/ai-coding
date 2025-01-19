@@ -1,10 +1,17 @@
 export const CHART_CONFIG = {
-  width: 800,
+  width: 950,
+  mobileWidth: 800,
   height: 600,
   margin: {
     top: 50,
+    right: 180,
+    bottom: 120,
+    left: 140,
+  },
+  mobileMargin: {
+    top: 50,
     right: 50,
-    bottom: 50,
+    bottom: 120,
     left: 140,
   },
   colors: {
