@@ -15,7 +15,7 @@ body {
   background: hsl(230, 29%, 19%);
   color: hsl(184, 30%, 85%);
   font-family: 'IBM Plex Mono', monospace;
-  padding: 20px;
+  padding: 0;
 }
 
 .container {
@@ -31,6 +31,12 @@ h1 {
   font-size: 1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+}
+
+/* cap the width of the visualization */
+svg {
+  width: 90vw;
+  max-width: 1000px;
 }
 
 /* Legend and credits visibility - default state */
@@ -54,7 +60,7 @@ h1 {
   }
 
   svg {
-    width: 95vw;
+    width: 100vw;
     max-width: 800px;
   }
 
@@ -69,12 +75,6 @@ h1 {
   .disclaimer-mobile {
     display: block;
   }
-}
-
-/* cap the width of the visualization */
-svg {
-  width: 90vw;
-  max-width: 1000px;
 }
 
 svg text {

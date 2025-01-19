@@ -51,7 +51,7 @@ function initializeChart() {
   const mobileDisclaimer = group
     .append('text')
     .attr('class', 'disclaimer disclaimer-mobile')
-    .attr('x', width / 2)
+    .attr('x', width / 2 - 30)
     .attr('y', height + 60)
     .attr('text-anchor', 'middle')
     .style('font-size', '0.7rem')
@@ -120,7 +120,7 @@ function initializeChart() {
   const mobileCredits = group
     .append('g')
     .attr('class', 'credits credits-mobile')
-    .attr('transform', `translate(${width / 2}, ${height + 80})`);
+    .attr('transform', `translate(${width / 2 - 30}, ${height + 80})`);
 
   const mobileCreditsText = mobileCredits
     .append('text')
