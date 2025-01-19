@@ -61,7 +61,7 @@ function initializeChart() {
     .style('fill', 'hsl(184, 30%, 70%)');
 
   creditsText.append('tspan')
-    .text('Author: ');
+    .text('Created by ');
 
   creditsText.append('a')
     .attr('xlink:href', 'https://www.linkedin.com/in/zhu-liang/')
