@@ -54,12 +54,44 @@ function initializeChart() {
     .attr('class', 'credits')
     .attr('transform', `translate(${width / 2}, ${height + 45})`);
 
-  credits
+  const creditsText = credits
     .append('text')
     .attr('text-anchor', 'middle')
     .style('font-size', '0.7rem')
+    .style('fill', 'hsl(184, 30%, 70%)');
+
+  creditsText.append('tspan')
+    .text('Author: ');
+
+  creditsText.append('a')
+    .attr('xlink:href', 'https://www.linkedin.com/in/zhu-liang/')
+    .attr('target', '_blank')
     .style('fill', 'hsl(184, 30%, 70%)')
-    .text('Author: Zhu Liang (creator of 16x Prompt). Tools used: d3, Cursor.');
+    .attr('text-decoration', 'underline')
+    .attr('text-decoration-thickness', '1')
+    .text('Zhu Liang');
+
+  creditsText.append('tspan')
+    .text(' (');
+
+  creditsText.append('a')
+    .attr('xlink:href', 'https://prompt.16x.engineer/')
+    .attr('target', '_blank')
+    .style('fill', 'hsl(184, 30%, 70%)')
+    .attr('text-decoration', 'underline')
+    .attr('text-decoration-thickness', '1')
+    .text('16x Prompt');
+
+  creditsText.append('tspan')
+    .text('). Tools used: d3, Cursor. ');
+
+  creditsText.append('a')
+    .attr('xlink:href', 'https://github.com/paradite/ai-coding')
+    .attr('target', '_blank')
+    .style('fill', 'hsl(184, 30%, 70%)')
+    .attr('text-decoration', 'underline')
+    .attr('text-decoration-thickness', '1')
+    .text('View source code');
 }
 
 // Start the visualization
