@@ -8,21 +8,22 @@ import { createLegend } from './components/legend.js';
 function setupChart() {
   const isMobile = window.innerWidth <= 768;
   const chartWidth = isMobile ? CHART_CONFIG.mobileWidth : CHART_CONFIG.width;
+  const chartHeight = isMobile ? CHART_CONFIG.mobileHeight : CHART_CONFIG.height;
   const margins = isMobile ? CHART_CONFIG.mobileMargin : CHART_CONFIG.margin;
 
   const width = chartWidth - (margins.left + margins.right);
-  const height = CHART_CONFIG.height - (margins.top + margins.bottom);
+  const height = chartHeight - (margins.top + margins.bottom);
 
   const svg = d3
     .select('.viz')
     .append('svg')
-    .attr('viewBox', `0 0 ${chartWidth} ${CHART_CONFIG.height}`);
+    .attr('viewBox', `0 0 ${chartWidth} ${chartHeight}`);
 
   const group = svg
     .append('g')
     .attr('transform', `translate(${margins.left}, ${margins.top})`);
 
-  return { svg, group, width, height };
+  return { svg, group, width, height, isMobile };
 }
 
 function initializeChart() {

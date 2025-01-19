@@ -52,7 +52,7 @@ export function createLegend(group, width, height) {
     .attr('x', 12)
     .attr('y', 0)
     .attr('dominant-baseline', 'middle')
-    .style('font-size', '0.6rem')
+    .style('font-size', '0.75rem')
     .style('font-weight', '300')
     .style('letter-spacing', '0.05rem')
     .style('fill', 'hsl(184, 30%, 85%)')

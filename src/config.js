@@ -1,12 +1,13 @@
 export const CHART_CONFIG = {
-  width: 950,
+  width: 1100,
   mobileWidth: 800,
-  height: 600,
+  height: 700,
+  mobileHeight: 600,
   margin: {
     top: 50,
-    right: 180,
+    right: 190,
     bottom: 120,
-    left: 140,
+    left: 160,
   },
   mobileMargin: {
     top: 50,
