@@ -33,6 +33,14 @@ h1 {
   text-transform: uppercase;
 }
 
+/* small screen */
+@media (max-width: 768px) {
+  h1 {
+    margin-left: 0;
+    font-size: 0.8rem;
+  }
+}
+
 /* cap the width of the visualization */
 svg {
   width: 90vw;
