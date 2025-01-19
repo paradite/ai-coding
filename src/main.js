@@ -36,7 +36,7 @@ function initializeChart() {
   createLegend(group, width, height);
 
   // Add disclaimer text
-  group
+  const disclaimer = group
     .append('text')
     .attr('class', 'disclaimer')
     .attr('x', width / 2)
@@ -60,10 +60,10 @@ function initializeChart() {
     .style('font-size', '0.7rem')
     .style('fill', 'hsl(184, 30%, 70%)');
 
-  creditsText.append('tspan')
-    .text('Created by ');
+  creditsText.append('tspan').text('Created by ');
 
-  creditsText.append('a')
+  creditsText
+    .append('a')
     .attr('xlink:href', 'https://www.linkedin.com/in/zhu-liang/')
     .attr('target', '_blank')
     .style('fill', 'hsl(184, 30%, 70%)')
@@ -71,10 +71,10 @@ function initializeChart() {
     .attr('text-decoration-thickness', '1')
     .text('Zhu Liang');
 
-  creditsText.append('tspan')
-    .text(' (');
+  creditsText.append('tspan').text(' (');
 
-  creditsText.append('a')
+  creditsText
+    .append('a')
     .attr('xlink:href', 'https://prompt.16x.engineer/')
     .attr('target', '_blank')
     .style('fill', 'hsl(184, 30%, 70%)')
@@ -82,16 +82,27 @@ function initializeChart() {
     .attr('text-decoration-thickness', '1')
     .text('16x Prompt');
 
-  creditsText.append('tspan')
-    .text('). Tools used: d3, Cursor. ');
+  creditsText.append('tspan').text(') using d3 and Cursor. ');
 
-  creditsText.append('a')
+  creditsText
+    .append('a')
+    .attr('xlink:href', 'https://prompt.16x.engineer/blog/ai-coding-l1-l5')
+    .attr('target', '_blank')
+    .style('fill', 'hsl(184, 30%, 70%)')
+    .attr('text-decoration', 'underline')
+    .attr('text-decoration-thickness', '1')
+    .text('Learn more about L1-L5');
+
+  creditsText.append('tspan').text(' | ');
+
+  creditsText
+    .append('a')
     .attr('xlink:href', 'https://github.com/paradite/ai-coding')
     .attr('target', '_blank')
     .style('fill', 'hsl(184, 30%, 70%)')
     .attr('text-decoration', 'underline')
     .attr('text-decoration-thickness', '1')
-    .text('View source code');
+    .text('Source code');
 }
 
 // Start the visualization
