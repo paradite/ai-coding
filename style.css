@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* center in the viewport */
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: hsl(230, 29%, 19%);
+  color: hsl(184, 30%, 85%);
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 110px;
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+/* cap the width of the visualization */
+svg {
+  width: 90vw;
+  max-width: 900px;
+}
+
+svg text {
+  font-family: 'IBM Plex Mono', monospace;
+  fill: currentColor;
+  text-shadow: 0 0 1px hsla(0, 0%, 0%, 0.35);
+  letter-spacing: 0.01rem;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+/* animation for the path elements included through the tooltip */
+@keyframes dashOffset {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
+
+.viz {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tooltip {
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.7rem;
+}
+
+text {
+  fill: hsl(184, 30%, 85%);
+}
