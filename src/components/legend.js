@@ -3,7 +3,7 @@ import { CHART_CONFIG } from '../config.js';
 export function createLegend(group, width, height) {
   const legendData = [
     { label: 'Waitlist', status: 'waitlist' },
-    { label: 'Beta / Contact Sales', status: 'beta' },
+    { label: 'Contact Sales', status: 'beta' },
     { label: 'Available', status: 'available' },
     { label: 'Foundation Model', status: 'foundation' },
   ];
@@ -25,7 +25,7 @@ export function createLegend(group, width, height) {
     .data(legendData)
     .enter()
     .append('g')
-    .attr('transform', (d, i) => `translate(0, ${i * 20})`);
+    .attr('transform', (d, i) => `translate(0, ${i * 25})`);
 
   // Mobile legend items (2x2 grid layout)
   const mobileLegendItems = mobileLegendGroup
@@ -36,45 +36,37 @@ export function createLegend(group, width, height) {
     .attr('transform', (d, i) => {
       const row = Math.floor(i / 2);
       const col = i % 2;
-      return `translate(${col * 140}, ${row * 20})`;
+      return `translate(${col * 160}, ${row * 25})`;
     });
 
   // Add circles for desktop
   desktopLegendItems
     .append('circle')
-    .attr('r', 4)
+    .attr('r', 5)
     .attr('fill', (d) => CHART_CONFIG.availability[d.status])
     .style('opacity', 0.9);
 
   // Add labels for desktop
   desktopLegendItems
     .append('text')
-    .attr('x', 12)
+    .attr('x', 15)
     .attr('y', 0)
     .attr('dominant-baseline', 'middle')
-    .style('font-size', '0.75rem')
-    .style('font-weight', '300')
-    .style('letter-spacing', '0.05rem')
-    .style('fill', 'hsl(184, 30%, 85%)')
     .text((d) => d.label);
 
   // Add circles for mobile
   mobileLegendItems
     .append('circle')
-    .attr('r', 4)
+    .attr('r', 5)
     .attr('fill', (d) => CHART_CONFIG.availability[d.status])
     .style('opacity', 0.9);
 
   // Add labels for mobile
   mobileLegendItems
     .append('text')
-    .attr('x', 12)
+    .attr('x', 15)
     .attr('y', 0)
     .attr('dominant-baseline', 'middle')
-    .style('font-size', '0.6rem')
-    .style('font-weight', '300')
-    .style('letter-spacing', '0.05rem')
-    .style('fill', 'hsl(184, 30%, 85%)')
     .text((d) => d.label);
 
   return { desktopLegendGroup, mobileLegendGroup };

@@ -5,9 +5,8 @@ export function createQuadrants(group, width, height) {
 
   // Create quadrants based on domains and levels
   const quadrants = [
-    { name: 'Frontend', x: 0, y: 0 },
-    { name: 'Fullstack', x: width / 3, y: 0 },
-    { name: 'General', x: (width / 3) * 2, y: 0 },
+    { name: 'Web Development', x: 0, y: 0 },
+    { name: 'General', x: width / 2, y: 0 },
   ];
 
   const quadrantGroups = quadrantsGroup
@@ -23,18 +22,18 @@ export function createQuadrants(group, width, height) {
     .append('rect')
     .attr('x', 0)
     .attr('y', 0)
-    .attr('width', width / 3)
+    .attr('width', width / 2)
     .attr('height', height)
     .attr('fill', 'hsl(0, 0%, 0%)')
-    .attr('opacity', (d, i) => (i === 1 ? 0.15 : i === 2 ? 0.05 : 0.1));
+    .attr('opacity', (d, i) => (i === 1 ? 0.05 : 0.1));
 
   // Add vertical lines between quadrants (skip the rightmost line)
   quadrantGroups
-    .filter((d, i) => i < 2) // Only add lines for first two quadrants
+    .filter((d, i) => i < 1) // Only add line for first quadrant
     .append('line')
-    .attr('x1', width / 3)
+    .attr('x1', width / 2)
     .attr('y1', 0)
-    .attr('x2', width / 3)
+    .attr('x2', width / 2)
     .attr('y2', height)
     .attr('stroke', 'hsl(184, 30%, 70%)')
     .attr('stroke-width', 1)
@@ -74,29 +73,36 @@ export function createQuadrants(group, width, height) {
       labelGroup
         .append('tspan')
         .attr('x', -20)
-        .attr('dy', '-0.7em')
-        .text(level[0])
-        .style('font-size', '0.7rem');
+        .attr('dy', '-1.4em')
+        .attr('class', 'level-number')
+        .text(level[0]);
 
-      // Add second line (description)
+      // Add description first line
       labelGroup
         .append('tspan')
         .attr('x', -20)
         .attr('dy', '1.4em')
-        .text(level[1])
-        .style('font-size', '0.6rem');
+        .attr('class', 'level-description')
+        .text(level[1][0]);
+
+      // Add description second line
+      labelGroup
+        .append('tspan')
+        .attr('x', -20)
+        .attr('dy', '1.2em')
+        .attr('class', 'level-description')
+        .text(level[1][1]);
     });
 
   // Add labels for each quadrant
   quadrantGroups
     .append('text')
-    .attr('x', width / 6)
+    .attr('x', width / 4)
     .attr('y', -20)
     .attr('text-anchor', 'middle')
     .attr('dominant-baseline', 'middle')
-    .text((d) => d.name)
-    .style('font-size', '0.8rem')
-    .style('fill', 'hsl(184, 30%, 85%)');
+    .attr('class', 'quadrant-label')
+    .text((d) => d.name);
 
   return quadrantsGroup;
 }

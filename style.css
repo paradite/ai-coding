@@ -79,6 +79,48 @@ svg {
   .disclaimer-mobile {
     display: block;
   }
+
+  /* Increase font size for data points on mobile */
+  .name {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  /* Adjust position for better readability */
+  .name-general {
+    transform: translate(2px, 0);
+  }
+
+  .name-webdev {
+    transform: translate(2px, 0);
+  }
+
+  /* Increase font size for legend and bottom text on mobile */
+  .legend text {
+    font-size: 0.85rem;
+  }
+
+  .credits text,
+  .disclaimer {
+    font-size: 0.8rem;
+  }
+
+  /* Increase quadrant label size on mobile */
+  .quadrant-label {
+    font-size: 0.9rem;
+  }
+
+  /* Increase level label size on mobile */
+  .level-number {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .level-description {
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.95;
+  }
 }
 
 svg text {
@@ -99,7 +141,7 @@ svg text {
 
 .viz {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 100px);
   display: flex;
   justify-content: center;
 }
@@ -112,4 +154,45 @@ svg text {
 
 text {
   fill: hsl(184, 30%, 85%);
+}
+
+/* Data point labels */
+.name {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+
+/* Legend styles */
+.legend text {
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+
+.credits text,
+.disclaimer {
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+
+/* Quadrant labels */
+.quadrant-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  fill: hsl(184, 30%, 85%);
+}
+
+/* Level labels */
+.level-number {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.level-description {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+  opacity: 0.9;
 }
