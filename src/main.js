@@ -61,7 +61,7 @@ function createCreditsGroup(group, width, height, textOffset, isMobile) {
   createLink(
     creditsText,
     'https://prompt.16x.engineer/blog/ai-coding-l1-l5',
-    'Learn more about L1-L5'
+    'Learn more'
   );
   creditsText.append('tspan').text(' | ');
   createLink(creditsText, 'https://github.com/paradite/ai-coding', 'Source code');
