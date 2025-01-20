@@ -53,77 +53,7 @@ svg {
   display: block;
 }
 
-/* small screen */
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-
-  h1 {
-    margin-left: 0;
-    font-size: 0.8rem;
-  }
-
-  svg {
-    width: 100vw;
-    height: 394px;
-  }
-
-  .legend-desktop,
-  .credits-desktop,
-  .disclaimer-desktop {
-    display: none;
-  }
-
-  .legend-mobile,
-  .credits-mobile,
-  .disclaimer-mobile {
-    display: block;
-  }
-
-  /* Increase font size for data points on mobile */
-  .name {
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
-
-  /* Adjust position for better readability */
-  .name-general {
-    transform: translate(2px, 0);
-  }
-
-  .name-webdev {
-    transform: translate(2px, 0);
-  }
-
-  /* Increase font size for legend and bottom text on mobile */
-  .legend text {
-    font-size: 0.85rem;
-  }
-
-  .credits text,
-  .disclaimer {
-    font-size: 0.8rem;
-  }
-
-  /* Increase quadrant label size on mobile */
-  .quadrant-label {
-    font-size: 0.9rem;
-  }
-
-  /* Increase level label size on mobile */
-  .level-number {
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-
-  .level-description {
-    font-size: 0.75rem;
-    font-weight: 500;
-    opacity: 0.95;
-  }
-}
-
+/* Base SVG text styles */
 svg text {
   font-family: 'IBM Plex Mono', monospace;
   fill: currentColor;
@@ -131,25 +61,6 @@ svg text {
   letter-spacing: 0.01rem;
   font-size: 0.7rem;
   font-weight: 300;
-}
-
-/* animation for the path elements included through the tooltip */
-@keyframes dashOffset {
-  to {
-    stroke-dashoffset: -11;
-  }
-}
-
-.viz {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.tooltip {
-  pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  font-size: 0.7rem;
 }
 
 text {
@@ -195,4 +106,94 @@ text {
   font-weight: 400;
   letter-spacing: 0.03rem;
   opacity: 0.9;
+}
+
+/* small screen */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  h1 {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+
+  svg {
+    width: 100vw;
+    height: 394px;
+  }
+
+  .legend-desktop,
+  .credits-desktop,
+  .disclaimer-desktop {
+    display: none;
+  }
+
+  .legend-mobile,
+  .credits-mobile,
+  .disclaimer-mobile {
+    display: block;
+  }
+
+  /* Increase font size for data points on mobile */
+  svg text.name {
+    font-size: 0.9rem !important;
+    font-weight: 500;
+  }
+
+  /* Adjust position for better readability */
+  .name-general {
+    transform: translate(2px, 0);
+  }
+
+  .name-webdev {
+    transform: translate(2px, 0);
+  }
+
+  /* Increase font size for legend and bottom text on mobile */
+  .legend text {
+    font-size: 0.85rem;
+  }
+
+  .credits text,
+  .disclaimer {
+    font-size: 0.8rem;
+  }
+
+  /* Increase quadrant label size on mobile */
+  .quadrant-label {
+    font-size: 0.9rem;
+  }
+
+  /* Increase level label size on mobile */
+  .level-number {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .level-description {
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.95;
+  }
+}
+
+/* animation for the path elements included through the tooltip */
+@keyframes dashOffset {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
+
+.viz {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tooltip {
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.7rem;
 }

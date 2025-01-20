@@ -14,7 +14,7 @@ export const CHART_CONFIG = {
     top: 40,
     right: 20,
     bottom: 93,
-    left: 110,
+    left: 115,
   },
   colors: {
     webdev: 'hsl(33, 100%, 50%)', // Orange

@@ -40,7 +40,7 @@ function createLink(parent, href, text) {
 
 function createCreditsGroup(group, width, height, textOffset, isMobile) {
   const className = isMobile ? 'credits-mobile' : 'credits-desktop';
-  const yOffset = isMobile ? 80 : 45;
+  const yOffset = isMobile ? 90 : 45;
   const xPos = width / 2 - (isMobile ? textOffset : 0);
 
   const credits = group
@@ -51,7 +51,6 @@ function createCreditsGroup(group, width, height, textOffset, isMobile) {
   const creditsText = credits
     .append('text')
     .attr('text-anchor', 'middle')
-    .style('font-size', '0.7rem')
     .style('fill', 'hsl(184, 30%, 70%)');
 
   creditsText.append('tspan').text('Created by ');
@@ -70,7 +69,7 @@ function createCreditsGroup(group, width, height, textOffset, isMobile) {
 
 function createDisclaimer(group, width, height, textOffset, isMobile) {
   const className = isMobile ? 'disclaimer-mobile' : 'disclaimer-desktop';
-  const yOffset = isMobile ? 60 : 20;
+  const yOffset = isMobile ? 70 : 20;
   const xPos = width / 2 - (isMobile ? textOffset : 0);
 
   group
@@ -79,7 +78,6 @@ function createDisclaimer(group, width, height, textOffset, isMobile) {
     .attr('x', xPos)
     .attr('y', height + yOffset)
     .attr('text-anchor', 'middle')
-    .style('font-size', '0.7rem')
     .style('fill', 'hsl(184, 30%, 70%)')
     .text('Note: Item positions within quadrants are arbitrary.');
 }
