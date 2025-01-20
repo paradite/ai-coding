@@ -3,7 +3,7 @@ export const CHART_CONFIG = {
   mobileWidth: 800,
   height: 607,
   mobileHeight: 707,
-  mobileTextOffset: 40,
+  mobileTextOffset: 47,
   margin: {
     top: 40,
     right: 190,
