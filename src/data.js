@@ -175,6 +175,14 @@ export function generateData() {
       y: 2.5,
       status: 'available',
     },
+    {
+      name: 'GitHub Copilot Workspace',
+      level: 'L3',
+      domain: 'general',
+      x: 1.06,
+      y: 2.22,
+      status: 'available',
+    },
 
     // L4 tools (y = 3-4)
     {
@@ -182,6 +190,14 @@ export function generateData() {
       level: 'L4',
       domain: 'general',
       x: 1.7,
+      y: 3.32,
+      status: 'available',
+    },
+    {
+      name: 'devlo',
+      level: 'L4',
+      domain: 'general',
+      x: 1.1,
       y: 3.32,
       status: 'available',
     },
