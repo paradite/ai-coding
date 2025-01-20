@@ -1,20 +1,20 @@
 export const CHART_CONFIG = {
   width: 1100,
   mobileWidth: 800,
-  height: 700,
-  mobileHeight: 600,
+  height: 607,
+  mobileHeight: 707,
   mobileTextOffset: 40,
   margin: {
-    top: 50,
+    top: 40,
     right: 190,
-    bottom: 120,
+    bottom: 53,
     left: 160,
   },
   mobileMargin: {
-    top: 50,
-    right: 50,
-    bottom: 120,
-    left: 140,
+    top: 40,
+    right: 20,
+    bottom: 93,
+    left: 110,
   },
   colors: {
     webdev: 'hsl(33, 100%, 50%)', // Orange
