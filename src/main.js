@@ -6,10 +6,15 @@ import { createDataPoints } from './components/dataPoints.js';
 import { createLegend } from './components/legend.js';
 
 function setupChart() {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth < 767;
+  const isTiny = window.innerWidth < 400;
   const chartWidth = isMobile ? CHART_CONFIG.mobileWidth : CHART_CONFIG.width;
   const chartHeight = isMobile ? CHART_CONFIG.mobileHeight : CHART_CONFIG.height;
-  const margins = isMobile ? CHART_CONFIG.mobileMargin : CHART_CONFIG.margin;
+  const margins = isTiny
+    ? CHART_CONFIG.tinyMargin
+    : isMobile
+    ? CHART_CONFIG.mobileMargin
+    : CHART_CONFIG.margin;
   const textOffset = isMobile ? CHART_CONFIG.mobileTextOffset : 0;
 
   const width = chartWidth - (margins.left + margins.right);
@@ -24,7 +29,7 @@ function setupChart() {
     .append('g')
     .attr('transform', `translate(${margins.left}, ${margins.top})`);
 
-  return { svg, group, width, height, isMobile, textOffset };
+  return { svg, group, width, height, isMobile, isTiny, textOffset };
 }
 
 function initializeChart() {

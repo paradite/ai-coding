@@ -13,7 +13,13 @@ export const CHART_CONFIG = {
   mobileMargin: {
     top: 40,
     right: 20,
-    bottom: 20,
+    bottom: 30,
+    left: 115,
+  },
+  tinyMargin: {
+    top: 40,
+    right: 20,
+    bottom: 0,
     left: 115,
   },
   colors: {
