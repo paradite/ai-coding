@@ -1,19 +1,19 @@
 export const CHART_CONFIG = {
   width: 1100,
   mobileWidth: 800,
-  height: 607,
-  mobileHeight: 707,
+  height: 580,
+  mobileHeight: 690,
   mobileTextOffset: 47,
   margin: {
     top: 40,
     right: 190,
-    bottom: 53,
+    bottom: 0,
     left: 160,
   },
   mobileMargin: {
     top: 40,
     right: 20,
-    bottom: 93,
+    bottom: 20,
     left: 115,
   },
   colors: {

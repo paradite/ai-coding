@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600&display=swap');
 
+/* define width of the viz */
+:root {
+  --viz-width-desktop: 1100px;
+  --viz-width-mobile: 100vw;
+  --notes-width-desktop: calc(1100px - 160px - 190px);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,7 +18,7 @@ body {
   display: flex;
   min-height: 100vh;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: hsl(230, 29%, 19%);
   color: hsl(184, 30%, 85%);
   font-family: 'IBM Plex Mono', monospace;
@@ -34,21 +41,17 @@ h1 {
 
 /* cap the width of the visualization */
 svg {
-  width: 95vw;
-  max-width: 1100px;
-  height: 607px;
+  width: var(--viz-width-desktop);
+  max-width: var(--viz-width-desktop);
+  height: 580px;
 }
 
-/* Legend and credits visibility - default state */
-.legend-mobile,
-.credits-mobile,
-.disclaimer-mobile {
+/* Legend visibility - default state */
+.legend-mobile {
   display: none;
 }
 
-.legend-desktop,
-.credits-desktop,
-.disclaimer-desktop {
+.legend-desktop {
   display: block;
 }
 
@@ -79,12 +82,6 @@ text {
   letter-spacing: 0.05rem;
 }
 
-.credits text,
-.disclaimer {
-  font-size: 0.75rem;
-  letter-spacing: 0.05rem;
-}
-
 /* Quadrant labels */
 .quadrant-label {
   font-size: 0.8rem;
@@ -107,10 +104,38 @@ text {
   opacity: 0.9;
 }
 
+.notes {
+  width: var(--notes-width-desktop);
+  max-width: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+  opacity: 0.9;
+  padding: 0 20px;
+}
+
+.notes p {
+  margin-bottom: 6px;
+}
+
+.notes a {
+  color: hsl(184, 30%, 70%);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.notes a:hover {
+  color: hsl(184, 40%, 80%);
+}
+
 /* small screen */
 @media (max-width: 768px) {
   body {
-    padding: 0;
+    padding: 20px 0;
   }
 
   h1 {
@@ -119,19 +144,15 @@ text {
   }
 
   svg {
-    width: 100vw;
+    width: var(--viz-width-mobile);
     height: 394px;
   }
 
-  .legend-desktop,
-  .credits-desktop,
-  .disclaimer-desktop {
+  .legend-desktop {
     display: none;
   }
 
-  .legend-mobile,
-  .credits-mobile,
-  .disclaimer-mobile {
+  .legend-mobile {
     display: block;
   }
 
@@ -155,11 +176,6 @@ text {
     font-size: 0.85rem;
   }
 
-  .credits text,
-  .disclaimer {
-    font-size: 0.8rem;
-  }
-
   /* Increase quadrant label size on mobile */
   .quadrant-label {
     font-size: 0.9rem;
@@ -175,6 +191,15 @@ text {
     font-size: 0.8rem;
     font-weight: 500;
     opacity: 0.95;
+  }
+
+  .notes {
+    margin-top: 12px;
+    font-size: 0.6rem;
+  }
+
+  .disclaimer {
+    margin-bottom: 6px;
   }
 }
 

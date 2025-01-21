@@ -17,7 +17,7 @@ export function createLegend(group, width, height) {
   const mobileLegendGroup = group
     .append('g')
     .attr('class', 'legend legend-mobile')
-    .attr('transform', `translate(${width / 2 - 140}, ${height + 15})`);
+    .attr('transform', `translate(${width / 2 - 140}, ${height + 24})`);
 
   // Desktop legend items (vertical layout)
   const desktopLegendItems = desktopLegendGroup
