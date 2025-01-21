@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600&display=swap');
 
-/* define width of the viz */
+/* define variables of the viz */
 :root {
   --viz-width-desktop: 1100px;
   --viz-width-mobile: 100vw;
-  --notes-width-desktop: calc(1100px - 160px - 190px);
+  --margin-left: 160px;
+  --margin-right: 190px;
+  --notes-width-desktop: calc(
+    var(--viz-width-desktop) - var(--margin-left) - var(--margin-right)
+  );
+  --viz-height-desktop: 570px;
 }
 
 * {
@@ -44,7 +49,7 @@ h1 {
 svg {
   width: var(--viz-width-desktop);
   max-width: var(--viz-width-desktop);
-  height: 580px;
+  height: var(--viz-height-desktop);
 }
 
 /* Legend visibility - default state */

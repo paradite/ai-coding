@@ -1,14 +1,22 @@
 export const CHART_CONFIG = {
-  width: 1100,
+  width: parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--viz-width-desktop')
+  ),
   mobileWidth: 800,
-  height: 580,
+  height: parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--viz-height-desktop')
+  ),
   mobileHeight: 690,
   mobileTextOffset: 47,
   margin: {
     top: 40,
-    right: 190,
+    right: parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--margin-right')
+    ),
     bottom: 0,
-    left: 160,
+    left: parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--margin-left')
+    ),
   },
   mobileMargin: {
     top: 40,
