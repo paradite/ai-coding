@@ -299,5 +299,13 @@ export function generateData() {
       y: 4.6,
       status: 'waitlist',
     },
+    {
+      name: 'MultiDevin',
+      level: 'L5',
+      domain: 'general',
+      x: 1.27,
+      y: 4.54,
+      status: 'beta',
+    },
   ];
 }
