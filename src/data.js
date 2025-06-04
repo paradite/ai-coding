@@ -135,6 +135,7 @@ export function generateData() {
     },
 
     // L3 tools (y = 2-3)
+    // Webdev
     {
       name: 'Replit CDE',
       level: 'L3',
@@ -142,30 +143,6 @@ export function generateData() {
       x: 0.6,
       y: 2.32,
       status: 'available',
-    },
-    {
-      name: 'Codegen',
-      level: 'L3',
-      domain: 'general',
-      x: 1.7,
-      y: 2.4,
-      status: 'available',
-    },
-    {
-      name: 'Sweep',
-      level: 'L3',
-      domain: 'general',
-      x: 1.3,
-      y: 2.8,
-      status: 'beta',
-    },
-    {
-      name: 'Pythagora',
-      level: 'L3',
-      domain: 'general',
-      x: 1.6,
-      y: 2.6,
-      status: 'waitlist',
     },
     {
       name: 'v0',
@@ -191,15 +168,55 @@ export function generateData() {
       y: 2.5,
       status: 'available',
     },
+    // General
     {
-      name: 'GitHub Copilot Workspace',
+      name: 'Codegen',
+      level: 'L3',
+      domain: 'general',
+      x: 1.7,
+      y: 2.4,
+      status: 'available',
+    },
+    {
+      name: 'Pythagora',
+      level: 'L3',
+      domain: 'general',
+      x: 1.6,
+      y: 2.6,
+      status: 'waitlist',
+    },
+    {
+      name: 'GitHub Copilot (Agent)',
       level: 'L3',
       domain: 'general',
       x: 1.06,
       y: 2.22,
       status: 'available',
     },
-
+    {
+      name: 'Sweep',
+      level: 'L3',
+      domain: 'general',
+      x: 1.22,
+      y: 2.6,
+      status: 'beta',
+    },
+    {
+      name: 'Claude Code',
+      level: 'L3',
+      domain: 'general',
+      x: 1.1,
+      y: 2.8,
+      status: 'available',
+    },
+    {
+      name: 'OpenAI Codex',
+      level: 'L3',
+      domain: 'general',
+      x: 1.63,
+      y: 2.8,
+      status: 'available',
+    },
     // L4 tools (y = 3-4)
     {
       name: 'Devin',
