@@ -108,6 +108,7 @@ export function generateData() {
       x: 1.72,
       y: 1.71,
       status: 'available',
+      popular: true,
     },
     {
       name: 'PearAI',
@@ -208,6 +209,7 @@ export function generateData() {
       x: 1.1,
       y: 2.8,
       status: 'available',
+      popular: true,
     },
     {
       name: 'OpenAI Codex',

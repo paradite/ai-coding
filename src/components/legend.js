@@ -6,6 +6,7 @@ export function createLegend(group, width, height) {
     { label: 'Contact Sales', status: 'beta' },
     { label: 'Available', status: 'available' },
     { label: 'Foundation Model', status: 'foundation' },
+    { label: 'Popular', status: 'popular' },
   ];
 
   // Create two legend groups - one for desktop (right side) and one for mobile (bottom)
@@ -27,24 +28,45 @@ export function createLegend(group, width, height) {
     .append('g')
     .attr('transform', (d, i) => `translate(0, ${i * 25})`);
 
-  // Mobile legend items (2x2 grid layout)
+  // Mobile legend items (adjust for 5 items - 3 on top row, 2 on bottom)
   const mobileLegendItems = mobileLegendGroup
     .selectAll('g')
     .data(legendData)
     .enter()
     .append('g')
     .attr('transform', (d, i) => {
-      const row = Math.floor(i / 2);
-      const col = i % 2;
-      return `translate(${col * 160}, ${row * 25})`;
+      if (i < 3) {
+        // First row: 3 items
+        return `translate(${i * 100}, 0)`;
+      } else {
+        // Second row: 2 items, centered
+        return `translate(${(i - 3) * 100 + 50}, 25)`;
+      }
     });
 
   // Add circles for desktop
   desktopLegendItems
     .append('circle')
-    .attr('r', 5)
-    .attr('fill', (d) => CHART_CONFIG.availability[d.status])
-    .style('opacity', 0.9);
+    .attr('r', (d) => (d.status === 'popular' ? 6 : 5)) // Make popular legend item larger
+    .attr('fill', (d) => {
+      if (d.status === 'popular') {
+        return CHART_CONFIG.popular.fillColor;
+      }
+      return CHART_CONFIG.availability[d.status];
+    })
+    .attr('stroke', (d) => {
+      if (d.status === 'popular') {
+        return CHART_CONFIG.popular.strokeColor;
+      }
+      return 'none';
+    })
+    .attr('stroke-width', (d) => {
+      if (d.status === 'popular') {
+        return CHART_CONFIG.popular.strokeWidth;
+      }
+      return 0;
+    })
+    .style('opacity', (d) => (d.status === 'popular' ? 1 : 0.9));
 
   // Add labels for desktop
   desktopLegendItems
@@ -57,9 +79,26 @@ export function createLegend(group, width, height) {
   // Add circles for mobile
   mobileLegendItems
     .append('circle')
-    .attr('r', 5)
-    .attr('fill', (d) => CHART_CONFIG.availability[d.status])
-    .style('opacity', 0.9);
+    .attr('r', (d) => (d.status === 'popular' ? 6 : 5)) // Make popular legend item larger
+    .attr('fill', (d) => {
+      if (d.status === 'popular') {
+        return CHART_CONFIG.popular.fillColor;
+      }
+      return CHART_CONFIG.availability[d.status];
+    })
+    .attr('stroke', (d) => {
+      if (d.status === 'popular') {
+        return CHART_CONFIG.popular.strokeColor;
+      }
+      return 'none';
+    })
+    .attr('stroke-width', (d) => {
+      if (d.status === 'popular') {
+        return CHART_CONFIG.popular.strokeWidth;
+      }
+      return 0;
+    })
+    .style('opacity', (d) => (d.status === 'popular' ? 1 : 0.9));
 
   // Add labels for mobile
   mobileLegendItems

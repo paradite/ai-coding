@@ -45,20 +45,31 @@ export function createDataPoints(group, data, domainScale, levelScale, width, he
     .append('circle')
     .attr('cx', 0)
     .attr('cy', 0)
-    .attr('r', 4.5)
-    .attr('fill', (d) => CHART_CONFIG.availability[d.status])
-    .attr('stroke', (d) =>
-      d.isFoundationModel ? CHART_CONFIG.foundation.strokeColor : 'none'
-    )
-    .attr('stroke-width', (d) =>
-      d.isFoundationModel ? CHART_CONFIG.foundation.strokeWidth : 0
-    )
-    .style('opacity', 0.9);
+    .attr('r', (d) => (d.popular ? 6 : 4.5)) // Make popular items noticeably larger
+    .attr('fill', (d) => {
+      if (d.popular) {
+        return CHART_CONFIG.popular.fillColor;
+      }
+      return CHART_CONFIG.availability[d.status];
+    })
+    .attr('stroke', (d) => {
+      if (d.popular) {
+        return CHART_CONFIG.popular.strokeColor;
+      }
+      return d.isFoundationModel ? CHART_CONFIG.foundation.strokeColor : 'none';
+    })
+    .attr('stroke-width', (d) => {
+      if (d.popular) {
+        return CHART_CONFIG.popular.strokeWidth;
+      }
+      return d.isFoundationModel ? CHART_CONFIG.foundation.strokeWidth : 0;
+    })
+    .style('opacity', (d) => (d.popular ? 1 : 0.9)); // Make popular items fully opaque
 
   // Add labels
   dataPointsGroup
     .append('text')
-    .attr('x', 8)
+    .attr('x', (d) => (d.popular ? 10 : 8)) // Adjust spacing for larger popular circles
     .attr('y', 0)
     .attr(
       'class',
@@ -66,10 +77,10 @@ export function createDataPoints(group, data, domainScale, levelScale, width, he
     )
     .text((d) => d.name)
     .attr('dominant-baseline', 'central')
-    .style('font-size', '0.8rem')
-    .style('font-weight', '400')
+    .style('font-size', '0.8rem') // Keep consistent text size
+    .style('font-weight', '400') // Keep consistent text weight
     .style('letter-spacing', '0.05rem')
-    .style('fill', 'hsl(184, 30%, 85%)');
+    .style('fill', 'hsl(184, 30%, 85%)'); // Keep consistent text color
 
   return dataGroup;
 }
