@@ -5,7 +5,7 @@ export function createLegend(group, width, height) {
     { label: 'Waitlist', status: 'waitlist' },
     { label: 'Contact Sales', status: 'beta' },
     { label: 'Available', status: 'available' },
-    { label: 'Foundation Model', status: 'foundation' },
+    // { label: 'Foundation Model', status: 'foundation' },
     { label: 'Popular', status: 'popular' },
   ];
 
