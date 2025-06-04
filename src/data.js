@@ -87,7 +87,7 @@ export function generateData() {
       name: 'Repo Prompt',
       level: 'L2',
       domain: 'general',
-      x: 1.1,
+      x: 1.02,
       y: 1.4,
       status: 'available',
     },
@@ -96,7 +96,7 @@ export function generateData() {
       name: '16x Prompt',
       level: 'L2',
       domain: 'general',
-      x: 1.43,
+      x: 1.4,
       y: 1.4,
       status: 'available',
     },
@@ -140,7 +140,7 @@ export function generateData() {
       x: 1.72,
       y: 1.8,
       status: 'available',
-      popular: true,
+      leader: true,
     },
 
     // L3 tools (y = 2-3)
@@ -150,7 +150,7 @@ export function generateData() {
       level: 'L3',
       domain: 'webdev',
       x: 0.6,
-      y: 2.32,
+      y: 2.3,
       status: 'available',
     },
     {
@@ -182,7 +182,7 @@ export function generateData() {
       name: 'Codegen',
       level: 'L3',
       domain: 'general',
-      x: 1.7,
+      x: 1.73,
       y: 2.2,
       status: 'available',
     },
@@ -217,13 +217,13 @@ export function generateData() {
       x: 1.15,
       y: 2.6,
       status: 'available',
-      popular: true,
+      leader: true,
     },
     {
       name: 'OpenAI Codex',
       level: 'L3',
       domain: 'general',
-      x: 1.65,
+      x: 1.62,
       y: 2.6,
       status: 'available',
     },
@@ -236,6 +236,7 @@ export function generateData() {
       status: 'available',
     },
     // L4 tools (y = 3-4)
+    // General
     {
       name: 'Devin',
       level: 'L4',
@@ -243,6 +244,7 @@ export function generateData() {
       x: 1.7,
       y: 3.32,
       status: 'available',
+      leader: true,
     },
     {
       name: 'devlo',
@@ -253,6 +255,14 @@ export function generateData() {
       status: 'available',
     },
     {
+      name: 'Engine',
+      level: 'L4',
+      domain: 'general',
+      x: 1.64,
+      y: 3.6,
+      status: 'beta',
+    },
+    {
       name: 'Genie',
       level: 'L4',
       domain: 'general',
@@ -261,13 +271,14 @@ export function generateData() {
       status: 'waitlist',
     },
     {
-      name: 'Engine',
+      name: 'Factory',
       level: 'L4',
       domain: 'general',
-      x: 1.64,
-      y: 3.6,
-      status: 'beta',
+      x: 1.6,
+      y: 3.8,
+      status: 'available',
     },
+    // Webdev
     {
       name: 'Marblism',
       level: 'L4',
@@ -299,7 +310,7 @@ export function generateData() {
       x: 0.2,
       y: 3.87,
       status: 'available',
-      popular: true,
+      leader: true,
     },
     {
       name: 'Replit Agent',

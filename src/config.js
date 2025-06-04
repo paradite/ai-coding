@@ -40,7 +40,7 @@ export const CHART_CONFIG = {
     waitlist: 'hsl(259, 48%, 55%)', // Purple
     foundation: 'hsl(0, 0%, 100%)', // White
   },
-  popular: {
+  leader: {
     fillColor: 'hsl(320, 100%, 70%)', // Bright magenta/pink
     strokeColor: 'hsl(320, 100%, 85%)', // Lighter magenta for stroke
     strokeWidth: 2,

@@ -6,7 +6,7 @@ export function createLegend(group, width, height) {
     { label: 'Contact Sales', status: 'beta' },
     { label: 'Available', status: 'available' },
     // { label: 'Foundation Model', status: 'foundation' },
-    { label: 'Popular', status: 'popular' },
+    { label: 'Leader', status: 'leader' },
   ];
 
   // Create two legend groups - one for desktop (right side) and one for mobile (bottom)
@@ -47,26 +47,26 @@ export function createLegend(group, width, height) {
   // Add circles for desktop
   desktopLegendItems
     .append('circle')
-    .attr('r', (d) => (d.status === 'popular' ? 6 : 5)) // Make popular legend item larger
+    .attr('r', (d) => (d.status === 'leader' ? 6 : 5)) // Make leader legend item larger
     .attr('fill', (d) => {
-      if (d.status === 'popular') {
-        return CHART_CONFIG.popular.fillColor;
+      if (d.status === 'leader') {
+        return CHART_CONFIG.leader.fillColor;
       }
       return CHART_CONFIG.availability[d.status];
     })
     .attr('stroke', (d) => {
-      if (d.status === 'popular') {
-        return CHART_CONFIG.popular.strokeColor;
+      if (d.status === 'leader') {
+        return CHART_CONFIG.leader.strokeColor;
       }
       return 'none';
     })
     .attr('stroke-width', (d) => {
-      if (d.status === 'popular') {
-        return CHART_CONFIG.popular.strokeWidth;
+      if (d.status === 'leader') {
+        return CHART_CONFIG.leader.strokeWidth;
       }
       return 0;
     })
-    .style('opacity', (d) => (d.status === 'popular' ? 1 : 0.9));
+    .style('opacity', (d) => (d.status === 'leader' ? 1 : 0.9));
 
   // Add labels for desktop
   desktopLegendItems
@@ -79,26 +79,26 @@ export function createLegend(group, width, height) {
   // Add circles for mobile
   mobileLegendItems
     .append('circle')
-    .attr('r', (d) => (d.status === 'popular' ? 6 : 5)) // Make popular legend item larger
+    .attr('r', (d) => (d.status === 'leader' ? 6 : 5)) // Make leader legend item larger
     .attr('fill', (d) => {
-      if (d.status === 'popular') {
-        return CHART_CONFIG.popular.fillColor;
+      if (d.status === 'leader') {
+        return CHART_CONFIG.leader.fillColor;
       }
       return CHART_CONFIG.availability[d.status];
     })
     .attr('stroke', (d) => {
-      if (d.status === 'popular') {
-        return CHART_CONFIG.popular.strokeColor;
+      if (d.status === 'leader') {
+        return CHART_CONFIG.leader.strokeColor;
       }
       return 'none';
     })
     .attr('stroke-width', (d) => {
-      if (d.status === 'popular') {
-        return CHART_CONFIG.popular.strokeWidth;
+      if (d.status === 'leader') {
+        return CHART_CONFIG.leader.strokeWidth;
       }
       return 0;
     })
-    .style('opacity', (d) => (d.status === 'popular' ? 1 : 0.9));
+    .style('opacity', (d) => (d.status === 'leader' ? 1 : 0.9));
 
   // Add labels for mobile
   mobileLegendItems

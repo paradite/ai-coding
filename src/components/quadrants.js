@@ -25,7 +25,7 @@ export function createQuadrants(group, width, height) {
     .attr('width', width / 2)
     .attr('height', height)
     .attr('fill', 'hsl(0, 0%, 0%)')
-    .attr('opacity', (d, i) => (i === 1 ? 0.05 : 0.1));
+    .attr('opacity', (d, i) => (i === 1 ? 0.1 : 0.1));
 
   // Add vertical lines between quadrants (skip the rightmost line)
   quadrantGroups
