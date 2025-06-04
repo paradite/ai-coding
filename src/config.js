@@ -21,7 +21,7 @@ export const CHART_CONFIG = {
   mobileMargin: {
     top: 40,
     right: 20,
-    bottom: 30,
+    bottom: 60,
     left: 115,
   },
   tinyMargin: {

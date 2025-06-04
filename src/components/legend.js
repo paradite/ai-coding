@@ -28,19 +28,19 @@ export function createLegend(group, width, height) {
     .append('g')
     .attr('transform', (d, i) => `translate(0, ${i * 25})`);
 
-  // Mobile legend items (adjust for 5 items - 3 on top row, 2 on bottom)
+  // Mobile legend items (adjust for 2 items - 2 on top row, 2 on bottom)
   const mobileLegendItems = mobileLegendGroup
     .selectAll('g')
     .data(legendData)
     .enter()
     .append('g')
     .attr('transform', (d, i) => {
-      if (i < 3) {
-        // First row: 3 items
-        return `translate(${i * 100}, 0)`;
+      if (i < 2) {
+        // First row: 2 items
+        return `translate(${i * 140}, 0)`;
       } else {
         // Second row: 2 items, centered
-        return `translate(${(i - 3) * 100 + 50}, 25)`;
+        return `translate(${(i - 2) * 140}, 25)`;
       }
     });
 
